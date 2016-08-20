@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<style>
+/*R320-R500*/
+@media screen and (max-width:500px){
+
+body {
+margin:0 auto;
+background-color: black;
+}
+input {
+color: grey;
+font-family:微軟正黑體;
+font-size:1.5rem;
+width:30%;
+text-align: center;
+border-radius:25px;
+}
+button {
+font-family:微軟正黑體;
+font-size: 1.5rem;
+border: solid 1px;
+border-radius:25px;
+}
+img {
+display:block;
+width: 90%;
+height:90%;
+margin:0 auto;
+}
+#intro  {
+margin:5px 10px;
+color: white;
+font-family:微軟正黑體;
+font-size:1.5rem;
+text-align:center;
+}
+#input {
+	margin:0 auto 5px;
+	text-align:center;
+}
+#button {
+	margin:0 auto 5px;
+	text-align:center;
+}
+#result {
+font-family:微軟正黑體;
+color: white;
+font-size:1.5rem;
+	margin:0 auto 5px;
+padding: 0px;
+text-align: center;
+}
+#img_conditon {
+border-radius:25px;
+}
+</style>
+</head>
+<body>
+<div id = "intro">老婆，你知道你老公這10天來是怎麼過的嗎？ 請在下面輸入1-10的數字。</div>
+<div id = "input"><input onkeypress = 'keyDetect()' id = 'day' type = 'text' maxlength = '2' placeholder = '1-10'/></div>
+<div id = "button"><button onclick = 'yozCondition()' >按這裡看結果</button></div>
+<div id = "result">這裡會顯示老公的狀態。</div>
+<img id = 'img_conditon' >
+<script>
+function yozCondition() {
+var day, result, my_condition;
+day = document.getElementById('day').value;
+
+if(day == '') {
+my_condition = 'oops.jpg';
+ result = '哎呀，你沒有輸入1-10的數字呦。';
+ }
+ else if(day == '請輸入1-10的數字') {
+my_condition = 'oops.jpg';
+ result = '哎呀，你沒有輸入1-10的數字呦。';
+ }
+ else if(day == 1){ 
+my_condition = '01.jpg';
+result = 'Day1：瘋狂打手槍';
+}
+else if(day == 2){ 
+my_condition = '02.jpg';
+result = 'Day2：罪惡感爆發。';
+}
+else if(day == 3){ 
+my_condition = '03.jpg';
+result = 'Day3：做面試的東東。';
+}
+else if(day == 4){ 
+my_condition = '04.jpg';
+result = 'Day4：繼續學javascript';
+}
+else if(day == 5){ 
+my_condition = '05.jpg';
+result = 'Day5：還是javascript。';
+}
+else if(day == 6){ 
+my_condition = '06.jpg';
+result = 'Day6：依然javascript。';
+}
+else if(day == 7){ 
+my_condition = '07.jpg';
+result = 'Day7：仍舊javascript。';
+}
+else if(day == 8){ 
+my_condition = '08.jpg';
+result = 'Day8：現在是第幾天了？';
+}
+else if(day == 9){ 
+my_condition = '09.jpg';
+result = 'Day9：媽的，隨便啦。';
+}
+else if(day == 10){ 
+my_condition = '10.jpg';
+result = 'Day10：整理家裡，準備接妳！';
+}
+else {
+my_condition = 'oops.jpg';
+ result = '哎呀，你沒有輸入1-10的數字呦。';
+}
+document.getElementById('result').innerHTML = result;
+document.getElementById('img_conditon').src = my_condition;
+}
+//enter偵測
+function keyDetect() {
+     if(this.event.which === 13)
+yozCondition();
+}
+</script>
+</body>
+</html>
